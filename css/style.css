@@ -13,10 +13,16 @@ header{
 	font-weight: bolder;
 }
 
+header nav ul{
+	margin:0 auto;
+	display: inline-block;
+}
+
 header nav ul li{
 	list-style: none;
 	display: inline-block;
 	border: azure;
+	padding: 3px 10px;
 	border-bottom-style: solid;
 }
 /*鼠标事件*/
@@ -27,3 +33,9 @@ header nav ul li:hover{
 	background-color: azure;
 }
 
+header nav ul li a{
+	color: darkmagenta;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: "microsoft yahei";
+}
