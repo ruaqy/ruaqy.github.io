@@ -1,0 +1,29 @@
+/*导航栏*/
+header{
+	width: 500px;
+	margin:0 auto;
+	background-color: cyan;
+	font-family: "microsoft yahei";
+}
+
+.logo{
+	color: indigo;
+	display: inline-block;
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+header nav ul li{
+	list-style: none;
+	display: inline-block;
+	border: azure;
+	border-bottom-style: solid;
+}
+/*鼠标事件*/
+header nav ul li:link{
+	background-color: cyan;
+}
+header nav ul li:hover{
+	background-color: azure;
+}
+
