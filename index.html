@@ -3,22 +3,31 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="js/subpage.js"></script>
 		<title>RQY的个人博客</title>
 	</head>
 	<body>
 		<header>
+			<!--导航栏-->
 			<nav>
 				<div>
 					<div class="logo">&nbsp;&nbsp;&nbsp;RuaQY小屋</div>
 					<ul>
-						<li><a href="/index.html">首页</a></li>
-						<li><a href="/index.html">文章</a></li>
-						<li><a href="/index.html">项目</a></li>
-						<li><a href="/index.html">关于</a></li>
+						<li><a href="javascript:PageHome()">首页</a></li>
+						<li><a href="javascript:PageArtist()">文章</a></li>
+						<li><a href="javascript:PageProject()">项目</a></li>
+						<li><a href="javascript:PageAbout()">关于</a></li>
 					</ul>
 				</div>
-				
 			</nav>
 		</header>
+		
+		<iframe id="subpage" src="home.html" scrolling="auto" width="100%" height=500px>
+			Sorry, your browser does not support inline frames. ;
+		</iframe>
+
+		<footer>
+			<div>友情链接:<a href="/">null</a>&nbsp;版权所有@RQY</div>
+		</footer>
 	</body>
 </html>

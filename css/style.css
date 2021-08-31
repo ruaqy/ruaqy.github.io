@@ -1,5 +1,5 @@
 /*导航栏*/
-header{
+header, footer{
 	width: 500px;
 	margin:0 auto;
 	background-color: cyan;
@@ -38,4 +38,13 @@ header nav ul li a{
 	font-weight: bold;
 	text-decoration: none;
 	font-family: "microsoft yahei";
+}
+
+iframe {
+	border: none;
+	margin:0 auto;
+}
+
+footer {
+	margin:0 auto;
 }
