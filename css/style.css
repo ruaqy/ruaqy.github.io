@@ -1,54 +1,93 @@
 /*导航栏*/
 header, footer{
-	width: 500px;
-	margin:0 auto;
-	background-color: cyan;
-	font-family: "microsoft yahei";
+	width: 100%;
+	border: #455059;
+	background-color: #1e252b ;
+}
+
+.head_background {
+	display: flex;    
+	/*实现垂直居中*/
+	align-items: center;
+	/*实现水平居中*/
+	justify-content: center;
 }
 
 .logo{
-	color: indigo;
-	display: inline-block;
+	color: #F0FFFF;
 	font-size: 30px;
+	margin-left: 30px;
 	font-weight: bolder;
-}
-
-header nav ul{
-	margin:0 auto;
 	display: inline-block;
 }
 
-header nav ul li{
+.site_list {
+	display: inline-block;
+	margin: auto 30px 0 auto;
+	/* 靠右靠下 */
+}
+
+.site_list li{
+	border: #323d47;
+	padding: 6px 10px;
+	margin: 0 0;
 	list-style: none;
 	display: inline-block;
-	border: azure;
-	padding: 3px 10px;
 	border-bottom-style: solid;
 }
 /*鼠标事件*/
-header nav ul li:link{
-	background-color: cyan;
+.site_list li:link{
+	background-color: #F0FFFF;
 }
 header nav ul li:hover{
-	background-color: azure;
+	background-color: #323d47 ;
 }
 
 header nav ul li a{
-	color: darkmagenta;
+	color: #F0FFFF;
 	font-weight: bold;
 	text-decoration: none;
 	font-family: "microsoft yahei";
 }
 
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
 iframe {
 	border: none;
 	margin:0 auto;
+	flex-grow: 1;
+	height: auto;
+	width: 100%;
 }
 
 #foottext {
-	display: flex;    /*实现垂直居中*/
-	align-items: center;    /*实现水平居中*/
+	display: flex;    
+	/*实现垂直居中*/
+	align-items: center;
+	/*实现水平居中*/
 	justify-content: center;
-	
 	color: #F0FFFF;
 }
+
+#foottext #friend_site {
+	color: #F0FFFF;
+	display: inline-block;
+	margin: 0 auto 0 30px;
+}
+
+#foottext #friend_site a{
+	color: #a28b40 ;
+}
+
+#foottext #copyright {
+	color: #F0FFFF;
+	display: inline-block;
+	margin: 0 30px 0 auto;
+}
+
