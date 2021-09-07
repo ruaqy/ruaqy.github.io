@@ -1,0 +1,28 @@
+body {
+	background-color: #323d47;
+}
+
+#text {
+	width: 70%;
+	margin:0 auto;
+	padding: 30px 30px;
+	border-radius: 10px;
+	background-color: #FFFFFF;
+}
+
+img {
+	max-width: 100%;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td, th {
+	padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+    display: table-cell;
+    vertical-align: inherit;
+}

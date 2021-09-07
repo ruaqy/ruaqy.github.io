@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>markdown文件显示</title>
+  <link rel="stylesheet" href="css/post.css" type="text/css" />
+</head>
+<body>
+	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/marked/marked.min.js'></script>
+	<script type="text/javascript">
+		function showMarkdown() {
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveXObject('Microsoft.XMLHttp');
+			}
+	
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById('text').innerHTML = marked(xmlhttp.responseText);
+				}
+			}
+			
+			var url = window.location.hash;
+			url = url.substr(1);
+			console.log("get url:"+url);
+			
+			// 向服务器发送请求
+			xmlhttp.open('GET', url, true);
+			xmlhttp.send();
+		}
+		showMarkdown();
+	</script>
+	
+	<div id="text" style="overflow: auto;">
+		
+	</div>
+</body>
+</html>

@@ -14,6 +14,10 @@ function PageProject(){
 }
 
 function PageAbout () {
+	// var iframe = document.getElementById("subpage")
+	// iframe.src = "./about.html";
+	
+	// 从markdown转化为html文件
 	var iframe = document.getElementById("subpage")
-	iframe.src = "./about.html";
+	iframe.src = "./post.html#pages/about.md";
 }
