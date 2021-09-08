@@ -26,3 +26,7 @@ td, th {
     display: table-cell;
     vertical-align: inherit;
 }
+
+a {
+	text-decoration: none;
+}

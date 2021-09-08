@@ -6,10 +6,12 @@
   <link rel="stylesheet" href="css/post.css" type="text/css" />
 </head>
 <body>
-	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/marked/marked.min.js'></script>
+	<script type="text/javascript" src='js/markdown_parser.js'></script>
 	<script type="text/javascript">
+	
 		function showMarkdown() {
 			var xmlhttp;
+			
 			if (window.XMLHttpRequest) {
 				xmlhttp = new XMLHttpRequest();
 			} else {
@@ -31,6 +33,11 @@
 			xmlhttp.send();
 		}
 		showMarkdown();
+		
+		window.onhashchange = function () {
+			console.log('URL发生变化了');
+			showMarkdown();
+		}
 	</script>
 	
 	<div id="text" style="overflow: auto;">

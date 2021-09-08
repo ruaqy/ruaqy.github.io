@@ -5,11 +5,19 @@
 
 <a href='https://gitee.com/muronglengjing/rua-blog/stargazers'><img src='https://gitee.com/muronglengjing/rua-blog/badge/star.svg?theme=dark' alt='star'></img></a>  [![fork](https://gitee.com/muronglengjing/rua-blog/badge/fork.svg?theme=dark)](https://gitee.com/muronglengjing/rua-blog/members)
 
+界面预览[Rua小屋](https://ruaqy.github.io)
 
+## 使用说明
 
-界面预览[Rua小屋](ruaqy.github.io)
+### 下载安装
 
-## 文件系统
+拷贝整个仓库后可以自行进行修改(LICENSE:[Mulan PSL v2](http://license.coscl.org.cn/MulanPSL2))。
+
+### 技术说明
+
+markdown分析器采用[Christopher Jeffrey](https://github.com/markedjs/marked)(MIT Licensed)的markdown parser。
+
+### 文件系统
 
  |文件夹			|含义								|
  |--------------|-----------------------------------|
@@ -19,7 +27,6 @@
  |pages			|存放一些界面文稿						|
  |pages/post	|存放能被显示的文稿(会被git记录)		|
  |pages/draft	|存放不会被显示的草稿(不会被git记录)	|
-
 
 
 ## 更新记录
