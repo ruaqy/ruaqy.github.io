@@ -1,7 +1,41 @@
 # 项目
 
-|项目名	|项目状态|项目日期|项目地址|
-|-------|-------|-------|--------|
-|项目1  |进行中  |2021.9.1|点击   |
+[![RQY/RuaBlog](https://gitee.com/muronglengjing/rua-blog/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/rua-blog)
 
+[![RQY/ST7735S LCD驱动](https://gitee.com/muronglengjing/st7735-s-lcd-driver/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/st7735-s-lcd-driver)
 
+[![RQY/学生信息管理系统](https://gitee.com/muronglengjing/my_student_manager/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/my_student_manager)
+
+[![RQY/DjangoOnlineShop](https://gitee.com/muronglengjing/django-online-shop/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/django-online-shop)
+
+[![RQY/RuaBlog](https://gitee.com/muronglengjing/rua-blog/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/rua-blog)
+
+[![RQY/ST7735S LCD驱动](https://gitee.com/muronglengjing/st7735-s-lcd-driver/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/st7735-s-lcd-driver)
+
+[![RQY/学生信息管理系统](https://gitee.com/muronglengjing/my_student_manager/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/my_student_manager)
+
+[![RQY/DjangoOnlineShop](https://gitee.com/muronglengjing/django-online-shop/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/django-online-shop)
+
+[![RQY/RuaBlog](https://gitee.com/muronglengjing/rua-blog/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/rua-blog)
+
+[![RQY/ST7735S LCD驱动](https://gitee.com/muronglengjing/st7735-s-lcd-driver/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/st7735-s-lcd-driver)
+
+[![RQY/学生信息管理系统](https://gitee.com/muronglengjing/my_student_manager/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/my_student_manager)
+
+[![RQY/DjangoOnlineShop](https://gitee.com/muronglengjing/django-online-shop/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/django-online-shop)
+
+[![RQY/RuaBlog](https://gitee.com/muronglengjing/rua-blog/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/rua-blog)
+
+[![RQY/ST7735S LCD驱动](https://gitee.com/muronglengjing/st7735-s-lcd-driver/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/st7735-s-lcd-driver)
+
+[![RQY/学生信息管理系统](https://gitee.com/muronglengjing/my_student_manager/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/my_student_manager)
+
+[![RQY/DjangoOnlineShop](https://gitee.com/muronglengjing/django-online-shop/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/django-online-shop)
+
+[![RQY/RuaBlog](https://gitee.com/muronglengjing/rua-blog/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/rua-blog)
+
+[![RQY/ST7735S LCD驱动](https://gitee.com/muronglengjing/st7735-s-lcd-driver/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/st7735-s-lcd-driver)
+
+[![RQY/学生信息管理系统](https://gitee.com/muronglengjing/my_student_manager/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/my_student_manager)
+
+[![RQY/DjangoOnlineShop](https://gitee.com/muronglengjing/django-online-shop/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/django-online-shop)

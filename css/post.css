@@ -28,5 +28,22 @@ td, th {
 }
 
 a {
+	color: #455059;
 	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover{
+	color: #D8CA9F;
+}
+
+code {
+	color: #4183C4;
+}
+
+pre {
+	background-color: #DFE2E5;
+	overflow-x: auto;
+	padding: 10px;
+	border-radius: 4px;
 }
