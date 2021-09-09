@@ -1,6 +1,6 @@
 # RuaBlog 轻量化且开源的静态博客系统
 
-版本:*v1.0.0.0* 日期:*2021年9月8日* 维护:*RQY*
+版本:*v1.0.0.1* 日期:*2021年9月9日* 维护:*RQY*
 
 [![RQY/RuaBlog](https://gitee.com/muronglengjing/rua-blog/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/muronglengjing/rua-blog)
 
@@ -22,6 +22,44 @@ markdown分析器采用[Christopher Jeffrey](https://github.com/markedjs/marked)
 
 使用python作为后端，进行静态编译markdown文件。
 
+### 使用说明
+
+#### 打开后端
+
+文件目录下，在控制台输入```python manager.py```可以看到所有命令，常见的操作有
+
+##### 添加项目
+
+```
+python manager.py -a "待添加的项目"
+```
+
+##### 移除项目
+
+```
+python manager.py -r
+```
+
+##### 生成数据库文件
+
+```
+python manager.py -p
+```
+
+##### 生成markdown文件
+
+```
+python manager.py -b
+```
+
+##### 生成数据库文件并生成markdown文件
+
+```
+python manager.py -g
+```
+
+
+
 ### 文件系统
 
 |文件夹			|含义								|
@@ -38,6 +76,12 @@ markdown分析器采用[Christopher Jeffrey](https://github.com/markedjs/marked)
 
 
 ## 更新记录
+
+### 2021年9月9日
+
+ 1. 修复了多次项目多次添加的问题
+ 2. 增加了静态编译器的功能，现在可以添加项目、生成数据库以及编译文件了
+ 3. 这是第一个正式版本，近期项目会搁置一段时间，如果有进展，会第一时间在网站上发布
 
 ### 2021年9月8日
 
