@@ -24,4 +24,6 @@
 （不要问我为什么不用js框架，因为那么也需要大量的下载与依赖，这与我的研发初衷的相违背的！）
 
 当然，如果你有反馈与建议，欢迎联系我
-email:muronglengjing@163.com
+email
+
+muronglengjing@163.com

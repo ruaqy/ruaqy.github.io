@@ -3,6 +3,10 @@ header, footer{
 	width: 100%;
 	border: #455059;
 	background-color: #1e252b ;
+	
+	/* 实现阴影效果 */
+	z-index: 100;
+	box-shadow: 0px 5px 10px 5px #333333;
 }
 
 .head_background {
@@ -39,6 +43,7 @@ header, footer{
 .site_list li:link{
 	background-color: #F0FFFF;
 }
+
 header nav ul li:hover{
 	background-color: #323d47 ;
 }
@@ -75,14 +80,14 @@ iframe {
 	color: #F0FFFF;
 }
 
+#foottext a{
+	color: #a28b40 ;
+}
+
 #foottext #friend_site {
 	color: #F0FFFF;
 	display: inline-block;
 	margin: 0 auto 0 30px;
-}
-
-#foottext #friend_site a{
-	color: #a28b40 ;
 }
 
 #foottext #copyright {

@@ -1,4 +1,4 @@
-import os, re, sys, time, json, getopt, logging
+import os, re, sys, time, json, shutil, getopt, logging
 
 
 class WebManager:
@@ -34,15 +34,15 @@ class WebManager:
             articles = []
             for out_file in files:
                 # 获得文件修改时间
-                filemt= time.strftime('%Y-%m-%d', time.localtime(os.stat("./pages/post/{}".format(out_file)).st_mtime))
+                filemt= time.strftime('%Y-%m-%d', time.localtime(os.stat("./pages/post/{}".format(out_file)).st_ctime))
                 title, main_text = "", ""
                 with open("./pages/post/{}".format(out_file), encoding="utf-8") as article:
                     title = article.readline()
-                    title = re.match("# (.+)", title)
+                    title = re.match("#+ (.+)", title)
                     if title:
                         title = title.group(1)
                     else:
-                        logging.warn("Not match title, post:{}".format(out_file))                    
+                        logging.warning("Not match title, post:{}".format(out_file))                    
                     main_text = article.read(60)
                     if main_text:
                         main_text = re.sub(r'\s+', '', main_text)
@@ -88,7 +88,10 @@ class WebManager:
             out_text = '# 文章\n'
             with open("pages/article.md", 'w', encoding="utf-8") as f:
                 # 获取数据
-                for item in self.web_dt.get("article", []):
+                articles = self.web_dt.get("article", [])
+                # 倒序输出
+                for index in range(len(articles)-1, -1, -1):
+                    item = articles[index]
                     append_text = """---
 ### [{}](./post.html#pages/post/{})
 
@@ -113,6 +116,31 @@ class WebManager:
         write_home()
         write_article()
         write_project()
+        
+    def move_draft(self):
+        # 移动草稿
+        def read_draft():
+            path = r'./pages/draft/'
+            path_target = r"./pages/post/"
+            files = os.listdir(path)
+            if not files:
+                logging.warning("Is no draft to post.")
+            else:
+                print("Index", "File Name", "Create Time", sep='\t')
+                for f_index in range(len(files)):
+                    out_file = files[f_index]
+                    # 获得文件修改时间
+                    filemt= time.strftime('%Y-%m-%d', time.localtime(os.stat(path+out_file).st_ctime))
+                    print(f_index, out_file, filemt, sep='\t')
+                f_index = input("Please press number of which you want to post.")
+                if f_index.isnumeric():
+                    s_file = path + files[int(f_index)]
+                    t_file = path_target + files[int(f_index)]
+                    shutil.move(s_file, t_file)
+                    logging.info("Draft posted:{}.".format(files[int(f_index)])) 
+                else:
+                    logging.error("Please input the number.")            
+        read_draft()
         
     def add_proj(self, proj):
         proj_ls = self.web_dt.get("proj", [])
@@ -142,16 +170,16 @@ def main(argv):
         # 输入指令为空
         print("Please input the command.Press -h or -help to get help.")
         sys.exit(0)
-        
-    manager = WebManager()
     
     try:
         opts, args = getopt.getopt(argv,"a:rmpbgh",["help", "remove","add=",
-                                                   "manager","parser","build",
+                                                   "move","parser","build",
                                                    "generate"])
     except getopt.GetoptError:
         logging.error("Command error.Press -h or -help to get help.")
         sys.exit(1)
+
+    manager = WebManager()
 
     for opt, arg in opts:
         if opt in ('-h', "--help"):
@@ -161,7 +189,9 @@ usage: python manager.py [option] [arg] ...
 Options and arguments:
     -a or --add      : add the project of web site.
     -r or --remove   : remove the project of web site.
-    -m or --manager  : manager the home page of web site.
+    
+    -w or --write    : write markdown draft.
+    -m or --move     : move the draft to post.
     
     -p or --parser   : parser the database.
     -b or --build    : bulid the markdown file.
@@ -179,8 +209,10 @@ Options and arguments:
             manager.save()
             sys.exit(0)
     
-        if opt in ('-m', "--manager"):
-            pass
+        if opt in ('-m', "--move"):
+            manager.move_draft()
+            sys.exit(0)
+            
         if opt in ('-p', "--parser"):
             manager.parser_data()
             manager.save()
