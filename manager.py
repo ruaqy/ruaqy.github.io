@@ -187,11 +187,16 @@ def main(argv):
             print("""
 usage: python manager.py [option] [arg] ...
 Options and arguments:
-    -a or --add      : add the project of web site.
+    -a or --add      : add the project of web site.use:
+                       -a arg
+                       --add arg
+                       you need to add arg to the command. 
     -r or --remove   : remove the project of web site.
     
-    -w or --write    : write markdown draft.
+    
+    -c or --create   : write markdown draft.
     -m or --move     : move the draft to post.
+    -d or --delete   : move the post to draft(delete post).
     
     -p or --parser   : parser the database.
     -b or --build    : bulid the markdown file.
