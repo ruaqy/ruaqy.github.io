@@ -28,6 +28,7 @@
 		</header>
 
 		<br />
+		<br />
 
 		<div id="text" style="overflow: auto;"></div>
 
@@ -43,8 +44,9 @@
 	</body>
 
 	<script type="text/javascript" src='js/markdown_parser.js'></script>
-	<script type="text/javascript">
-		function showMarkdown(url) {
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		function showContent(url) {
 			var xmlhttp;
 
 			if (window.XMLHttpRequest) {
@@ -65,22 +67,30 @@
 			xmlhttp.open('GET', url, true);
 			xmlhttp.send();
 		}
-	</script>
-	
-	<script src="js/jquery-3.6.0.min.js"></script>
-	<script>
+
+		function showMarkdown(url) {
+			showContent(url);
+			console.log("Screen width:" + document.body.clientWidth);
+			if (document.body.clientWidth < 440) {
+				$("#site_list").css("display", "none");
+				$("#morelist").attr("src", "img/more.png");
+			}
+		}
+
 		$(function() {
 			$("#morelist").mousedown(function() {
+				// 按钮切换
 				console.log("click in  more button.");
-				if ($("#site_list").css("display") == "none")
+				if ($("#site_list").css("display") == "none") {
+					$(this).attr("src", "img/close.png");
 					$("#site_list").css("display", "block");
-				else
+				} else {
+					$(this).attr("src", "img/more.png");
 					$("#site_list").css("display", "none");
+				}
 			})
-			
-			showMarkdown('pages/home.md');
+
+			showContent('pages/home.md');
 		})
-		
-		
 	</script>
 </html>

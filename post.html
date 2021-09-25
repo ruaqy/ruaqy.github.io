@@ -1,55 +1,68 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <title>markdown文件显示</title>
-  <link rel="stylesheet" href="css/post.css" type="text/css" />
-</head>
-<body>
-	<script type="text/javascript" src='js/markdown_parser.js'></script>
-	<script type="text/javascript">
-		function showMarkdown() {
-			var xmlhttp;
-			
-			if (window.XMLHttpRequest) {
-				xmlhttp = new XMLHttpRequest();
-			} else {
-				xmlhttp = new ActiveXObject('Microsoft.XMLHttp');
-			}
-	
-			xmlhttp.onreadystatechange = function() {
-				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById('text').innerHTML = marked(xmlhttp.responseText);
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+		<title>文章阅读</title>
+		<link rel="stylesheet" href="css/post.css" type="text/css" />
+	</head>
+	<body>
+		<script type="text/javascript" src='js/markdown_parser.js'></script>
+		<script type="text/javascript">
+			function showMarkdown() {
+				var xmlhttp;
+
+				if (window.XMLHttpRequest) {
+					xmlhttp = new XMLHttpRequest();
+				} else {
+					xmlhttp = new ActiveXObject('Microsoft.XMLHttp');
 				}
+
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						document.getElementById('text').innerHTML = marked(xmlhttp.responseText);
+					}
+				}
+
+				var url = window.location.hash;
+				url = url.substr(1);
+				console.log("get url:" + url);
+
+				// 向服务器发送请求
+				xmlhttp.open('GET', url, true);
+				xmlhttp.send();
 			}
-			
-			var url = window.location.hash;
-			url = url.substr(1);
-			console.log("get url:"+url);
-			
-			// 向服务器发送请求
-			xmlhttp.open('GET', url, true);
-			xmlhttp.send();
-		}
-		showMarkdown();
-		
-		window.onhashchange = function () {
 			showMarkdown();
-		}
-	</script>
-	
-	<div id="text" style="overflow: auto;">
-		
-	</div>
-	
-	<div id="copyright">
-		<p>
-			<br/>
-			版权声明
-			<a href='http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh'>BY-NC-ND 3.0</a>
-			<br/>
-			自由转载-非商用-非衍生-保持署名
-		</p>
-	</div>
-</body>
+
+			window.onhashchange = function() {
+				showMarkdown();
+			}
+		</script>
+
+		<div id="backhome">
+			<p>
+				<a href="javascript:history.back(-1);"><img src="img/back.png" />返回</a>
+			</p>
+		</div>
+
+		<br />
+
+		<br />
+
+
+		<div id="text" style="overflow: auto;">
+
+		</div>
+
+		<div id="copyright">
+			<p>
+				<br />
+				版权声明
+				<a href='http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh'>BY-NC-ND 3.0</a>
+				<br />
+				自由转载-非商用-非衍生-保持署名
+			</p>
+		</div>
+	</body>
 </html>
