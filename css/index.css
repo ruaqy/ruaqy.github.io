@@ -1,0 +1,172 @@
+/***********desktop structural css*************/
+@media screen and (min-width:460px) {
+
+	/* 标题栏 */
+	#logo {
+		/* 大小 */
+		padding: 0 10px;
+		/* 位置 */
+		position: absolute;
+		width: 80%;
+		left: 10%;
+		/* position: fixed; */
+		/* 颜色 */
+		background: aliceblue;
+	}
+
+	#logo h1 {
+		/* float: left; */
+	}
+
+	#logo nav {
+		/* float: right; */
+
+		display: inline;
+	}
+
+	#site_list li {
+		font-size: 20px;
+		font-weight: bold;
+
+		padding: 10px 1px;
+		line-height: 100%;
+		/* 样式 */
+		list-style: none;
+		display: inline-block;
+	}
+
+	#morelist {
+		display: none;
+	}
+
+	#foottext {
+		/* 大小 */
+		padding: 0 10px;
+		/* 样式 */
+		width: 80%;
+		left: 10%;
+		/* 位置 */
+		position: absolute;
+		/* 		position: fixed;
+		bottom: 0px; */
+		/* 颜色 */
+		color: gray;
+		background-color: aliceblue;
+	}
+
+	#friend_site,
+	#copyright {
+		display: inline;
+		font-weight: bold;
+	}
+
+	#friend_site {
+		/* float: left; */
+	}
+
+	#copyright {
+		/* float: right; */
+	}
+}
+
+/***********mobile structural css*************/
+
+@media screen and (max-width:460px) {
+
+	/* 标题与导航 */
+	#logo {
+		position: fixed;
+		padding: 10px 0;
+	}
+
+	#logo h1 {
+		display: inline;
+	}
+
+	#morelist {
+		/* 按钮 */
+		position: fixed;
+		float: right;
+		top: 18px;
+		right: 20px;
+	}
+
+	#site_list {
+		display: none;
+	}
+
+	#foottext {
+		/* 大小 */
+		/* 样式 */
+		width: 100%;
+		/* 位置 */
+		position: absolute;
+		/* 		position: fixed;
+			bottom: 0px; */
+	}
+
+	#friend_site,
+	#copyright {
+		display: inline;
+		font-weight: bold;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	/* 背景色 */
+	background-color: #fdfdfd;
+	/* 文本位置 */
+	text-align: center;
+}
+
+/* 超链接样式 */
+a {
+	color: darkgoldenrod;
+	text-decoration: none;
+}
+
+a:hover {
+	color: darkorange;
+}
+
+/* 导航栏 */
+#logo {
+	/* 位置 */
+	width: 100%;
+	z-index: 100;
+	/* 颜色 */
+	background: linen;
+}
+#site_list ul {
+	margin: 0;
+	padding: 0;
+}
+#site_list li {
+	/* 字体 */
+	font-size: 20px;
+	font-weight: bold;
+	/* 位置 */
+	padding: 10px 1px;
+	margin: auto auto;
+	/* 样式 */
+	list-style: none;
+}
+
+/* 页脚 */
+#foottext {
+	color: darkgoldenrod;
+	background-color: lightgoldenrodyellow;
+}
+
+/* 待显示的文本 */
+#text {
+	padding: 20px;
+	text-align: left;
+	/* 颜色 */
+	color: darkslategray;
+}
+
+

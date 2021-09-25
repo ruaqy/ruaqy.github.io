@@ -2,43 +2,85 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+		<link rel="stylesheet" href="css/index.css" type="text/css" />
 		<link rel="icon" href="./img/favicon.png" type="image/x-icon" />
-		<link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon"/>
+		<link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
 		<script src="js/subpage.js"></script>
-		<title>RQY的个人博客</title>
+		<title>XIAMO的个人博客</title>
 	</head>
 	<body>
-		<header>
-			<!-- gitee样式导航栏 -->
-			<nav>
-				<div class="head_background">
-					<div class="logo">RuaQY小屋</div>
-					<ul class="site_list">
-						<li><a href="javascript:PageHome()">首页</a></li>
-						<li><a href="javascript:PageArtist()">文章</a></li>
-						<li><a href="javascript:PageProject()">项目</a></li>
-						<li><a href="javascript:PageAbout()">关于</a></li>
-					</ul>
-				</div>
+		<header id="logo">
+			<!-- 导航栏 -->
+			<div>
+				<h1><a href="./index.html">夏沫秋初</a></h1>
+				<a><img id="morelist" width="30px" src="img/more.png" /> </a>
+			</div>
+			<nav id="site_list">
+				<ul>
+					<li><a href="javascript:showMarkdown('pages/home.md');">首页</a></li>
+					<li><a href="javascript:showMarkdown('pages/article.md');">文章</a></li>
+					<li><a href="javascript:showMarkdown('pages/project.md');">项目</a></li>
+					<li><a href="javascript:showMarkdown('pages/about.md');">关于</a></li>
+				</ul>
 			</nav>
 		</header>
-				
-		<iframe name="subpage" id="subpage" src="./post.html#pages/home.md" scrolling="auto">
-			Sorry, your browser does not support inline frames.;
-		</iframe>
 
-		<footer>
-			<div id="foottext">
-				<div id="friend_site">
-					友情链接
-					<a href="https://www.scut.edu.cn/">SCUT</a>
-				</div>
-				<div id="copyright">
-					版权所有@<a href="https://gitee.com/muronglengjing">RQY</a>
-				</div>
+		<br />
+
+		<div id="text" style="overflow: auto;"></div>
+
+		<footer id="foottext">
+			<div id="friend_site">
+				友情链接
+				<a href="https://www.scut.edu.cn/">SCUT</a>
+			</div>
+			<div id="copyright">
+				版权所有<a href="https://gitee.com/muronglengjing">@RQY</a>
 			</div>
 		</footer>
 	</body>
+
+	<script type="text/javascript" src='js/markdown_parser.js'></script>
+	<script type="text/javascript">
+		function showMarkdown(url) {
+			var xmlhttp;
+
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveXObject('Microsoft.XMLHttp');
+			}
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById('text').innerHTML = marked(xmlhttp.responseText);
+				}
+			}
+
+			console.log("get url:" + url);
+
+			// 向服务器发送请求
+			xmlhttp.open('GET', url, true);
+			xmlhttp.send();
+		}
+	</script>
+	
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function() {
+			$("#morelist").mousedown(function() {
+				console.log("click in  more button.");
+				if ($("#site_list").css("display") == "none")
+					$("#site_list").css("display", "block");
+				else
+					$("#site_list").css("display", "none");
+			})
+			
+			showMarkdown('pages/home.md');
+		})
+		
+		
+	</script>
 </html>

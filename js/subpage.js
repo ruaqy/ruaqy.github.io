@@ -5,7 +5,7 @@ function PageHome () {
 
 function PageArtist(){
 	var iframe = document.getElementById("subpage")
-	iframe.src = "./post.html#pages/article.md";
+	iframe.src = "./article.html";
 }
 
 function PageProject(){
