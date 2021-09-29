@@ -1,0 +1,40 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	/* 文本位置 */
+	text-align: center;
+}
+
+/* 超链接样式 */
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td, th {
+	padding: 6px 13px;
+	text-align: left;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+pre {
+	overflow-x: auto;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+blockquote {
+	padding: 1px 5px;
+	margin: 10px 0px;
+}

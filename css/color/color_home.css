@@ -1,0 +1,24 @@
+@import url("color.css");
+
+body {
+	background-color: #fdfdfd;
+}
+
+/* 导航栏 */
+#logo {
+	background: linen;
+}
+
+/* 页脚 */
+#foottext {
+	color: darkgoldenrod;
+	background-color: lightgoldenrodyellow;
+}
+
+.project th{
+	color: gray
+}
+
+.project td{
+	color: darkslategray;
+}

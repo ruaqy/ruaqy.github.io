@@ -1,0 +1,60 @@
+body {
+	background-color: #323d47;
+}
+
+#text {
+	width: 70%;
+	margin:0 auto;
+	padding: 30px 30px;
+	border-radius: 10px;
+	background-color: #FFFFFF;
+}
+
+#store_tag {
+	max-width: 400px;
+}
+
+/* 列表 */
+.project_view {
+	list-style: none;
+}
+
+/* 项目表格 */
+.project_table {
+	width: 90%;
+	max-width: 500px;
+	border-collapse: collapse;
+	margin-bottom: 30px;
+}
+
+.project_table caption, table, th, td, tr{
+	border: #d8ca9f 1px solid;
+}
+
+.project_table th{
+	width: 70px;
+	background-color: #ebdfc1;
+}
+
+.project_table td{
+	background-color: #fffae5;
+}
+
+.artist_table {
+	margin-bottom: 20px;
+	width: 90%;
+}
+
+.artist_table caption, table, th, td, tr{
+	border: 0px;
+}
+
+.artist_table caption{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.artist_classify {
+	text-align: right;
+}

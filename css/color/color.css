@@ -1,0 +1,35 @@
+body {
+	background-color: #fdfdfd;
+	color: darkcyan;
+}
+
+/* 超链接样式 */
+a {
+	color: darkgoldenrod;
+}
+
+a:hover {
+	color: darkorange;
+}
+
+pre {
+	background-color: whitesmoke
+}
+
+/* 代码块 */
+code {
+	color: blueviolet;
+}
+
+/* 引用 */
+blockquote {
+	background-color: #DFE2E5;
+}
+
+td, th{
+	border: 1px solid lightgray;
+}
+
+blockquote {
+	border-left: 5px #666666 solid;
+}

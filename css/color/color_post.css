@@ -1,0 +1,23 @@
+@import url("color.css");
+
+body{
+	background-color: lightgoldenrodyellow;
+}
+
+#text {
+	color: darkslategray;
+	background-color: #FFFFFF;
+	box-shadow: 0px 5px 10px 1px darkkhaki;
+}
+
+#copyright *{
+	color: goldenrod;
+}
+
+#backhome {
+	background-color: white;
+}
+
+#backhome {
+	box-shadow: 0px 0px 10px 1px darkkhaki;
+}

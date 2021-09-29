@@ -8,21 +8,21 @@
 		<link rel="icon" href="./img/favicon.png" type="image/x-icon" />
 		<link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
 		<script src="js/subpage.js"></script>
-		<title>XIAMO的个人博客</title>
+		<div id="title">博客标题</div>
 	</head>
 	<body>
 		<header id="logo">
 			<!-- 导航栏 -->
 			<div>
-				<h1><a href="./index.html">夏沫秋初</a></h1>
+				<div id="headLogo"></div>
 				<a><img id="morelist" width="30px" src="img/more.png" /> </a>
 			</div>
 			<nav id="site_list">
 				<ul>
-					<li><a href="javascript:showMarkdown('pages/home.md');">首页</a></li>
-					<li><a href="javascript:showMarkdown('pages/article.md');">文章</a></li>
-					<li><a href="javascript:showMarkdown('pages/project.md');">项目</a></li>
-					<li><a href="javascript:showMarkdown('pages/about.md');">关于</a></li>
+					<li><a href="./index.html">首页</a></li>
+					<li><a href="./index.html#article">文章</a></li>
+					<li><a href="./index.html#project">项目</a></li>
+					<li><a href="./post.html#pages/about.md">关于</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -33,64 +33,125 @@
 		<div id="text" style="overflow: auto;"></div>
 
 		<footer id="foottext">
-			<div id="friend_site">
-				友情链接
-				<a href="https://www.scut.edu.cn/">SCUT</a>
-			</div>
-			<div id="copyright">
-				版权所有<a href="https://gitee.com/muronglengjing">@RQY</a>
-			</div>
 		</footer>
+
 	</body>
 
 	<script type="text/javascript" src='js/markdown_parser.js'></script>
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script>
-		function showContent(url) {
-			var xmlhttp;
-
-			if (window.XMLHttpRequest) {
-				xmlhttp = new XMLHttpRequest();
-			} else {
-				xmlhttp = new ActiveXObject('Microsoft.XMLHttp');
-			}
-
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById('text').innerHTML = marked(xmlhttp.responseText);
-				}
-			}
-
-			console.log("get url:" + url);
-
-			// 向服务器发送请求
-			xmlhttp.open('GET', url, true);
-			xmlhttp.send();
-		}
-
-		function showMarkdown(url) {
-			showContent(url);
-			console.log("Screen width:" + document.body.clientWidth);
-			if (document.body.clientWidth < 440) {
-				$("#site_list").css("display", "none");
-				$("#morelist").attr("src", "img/more.png");
-			}
-		}
-
+		
 		$(function() {
-			$("#morelist").mousedown(function() {
-				// 按钮切换
-				console.log("click in  more button.");
-				if ($("#site_list").css("display") == "none") {
-					$(this).attr("src", "img/close.png");
-					$("#site_list").css("display", "block");
-				} else {
-					$(this).attr("src", "img/more.png");
-					$("#site_list").css("display", "none");
+			$("#morelist").click(function() {
+				$("#site_list").finish();
+					// 按钮切换
+					console.log("click in  more button.");
+					$("#site_list").slideToggle("fast", function(){
+					if ($(this).css("display") == "none") {
+						$("#morelist").attr("src", "img/more.png");
+						console.log(1);
+					} else {
+						$("#morelist").attr("src", "img/close.png");
+						console.log(2);
+					}
+				});
+			})
+			
+			$("#title").load("pages/site_info.html title")
+			$("#logo div div").load("pages/site_info.html h1")
+			$("#foottext").load("pages/site_info.html .friend_site, .copyright")
+			
+			// 清空界面
+			$("#text").text("");
+			
+			$.getJSON("./data/dt_arti.json", function(data){
+				article = data["article"]
+				
+				$("#text").append("<br /><h1>近期文章</h1>")
+				
+				for(var key in article){
+					data = article[key];
+					$("#text").append("<a href="+data["url"]+"><div class='article'><h2>"+data["t_t"]+"</h2><date>"+data["c_t"]+"</date><p>"+data["m_c"]+"</p></div></a>");
+					$("#text").append("<br />")
+					// 只显示前三个
+					if(key=="2")
+						break;
 				}
 			})
-
-			showContent('pages/home.md');
+			
+			
+			$.getJSON("./data/dt_proj.json", function(data){
+				project = data["project"]
+				
+				$("#text").append("<br /><h1>近期项目</h1>")
+				
+				for(var key in project){
+					data = project[key];
+					
+					$("#text").append("<table class='project'><tr><th>项目名</th><td>"+data["t_t"]+"</td><th>项目状态</th><td>"+data["p_s"]+"</td></tr><th>概述</th><td  colspan='3'>"+data["m_c"]+"</td></tr><tr><th>项目链接</th><td>"+data["p_l"]+"</td><th>项目备注</th><td>"+data["p_p"]+"</td></tr></table>");
+					$("#text").append("<br />")
+					
+					if(key=="2")
+						break;
+				}
+			})
 		})
+		
+		$(function(){
+			displayArti = function(){
+				$.getJSON("./data/dt_arti.json", function(data){
+					article = data["article"]
+					
+					// 清空界面
+					$("#text").text("");
+					$("#text").append("<br /><h1>文章</h1>")
+					
+					for(var key in article){
+						data = article[key];
+						$("#text").append("<a href="+data["url"]+"><div class='article'><h2>"+data["t_t"]+"</h2><date>"+data["c_t"]+"</date><p>"+data["m_c"]+"</p></div></a>");
+						$("#text").append("<br />")
+					}
+				})
+			}
+			
+			displayProj = function(){
+				$.getJSON("./data/dt_proj.json", function(data){
+					project = data["project"]
+					
+					// 清空界面
+					$("#text").text("");
+					$("#text").append("<br /><h1>项目</h1>")
+					for(var key in project){
+						data = project[key];
+						
+						$("#text").append("<table class='project'><tr><th>项目名</th><td>"+data["t_t"]+"</td><th>项目状态</th><td>"+data["p_s"]+"</td></tr><th>概述</th><td  colspan='3'>"+data["m_c"]+"</td></tr><tr><th>项目链接</th><td>"+data["p_l"]+"</td><th>项目备注</th><td>"+data["p_p"]+"</td></tr></table>");
+						$("#text").append("<br />")
+					}
+				})
+			}
+			
+			// 更新显示
+			updateDisplay = function(){
+				var url = window.location.hash;
+				if(url=="#article"){
+					console.log("Article Page.");
+					displayArti();
+				}else if(url=="#project"){
+					console.log("Project Page.");
+					displayProj();
+				}
+				
+				if (document.body.clientWidth < 440) {
+					$("#site_list").css("display", "none");
+					$("#morelist").attr("src", "img/more.png");
+				}
+			}
+			updateDisplay();
+		})
+		
+		window.onhashchange = function() {
+			updateDisplay();
+		}
 	</script>
+
 </html>
